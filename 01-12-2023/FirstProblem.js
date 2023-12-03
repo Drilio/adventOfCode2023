@@ -1,8 +1,5 @@
-const fs = require('fs');
+const datas = require("./dataFirstProblem");
 
-const rawDatas = fs.readFileSync("./dataFirstProblem" , 'utf-8');
-const datas = rawDatas.split('\n');
-console.log(datas);
 function  myCalibrationValue(datas){
     let calibration = 0;
     //remove letters
@@ -15,4 +12,4 @@ function  myCalibrationValue(datas){
 
 }
 
-myCalibrationValue(datas)
+myCalibrationValue(datas.data)
