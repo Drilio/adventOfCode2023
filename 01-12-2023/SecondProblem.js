@@ -40,6 +40,7 @@ function myCalibrationValue(datas) {
             const twoDigit = (stringWithoutLetter.substring(0, 1) + stringWithoutLetter.substring(stringWithoutLetter.length - 1));
             calibration += parseInt(twoDigit, 10) || 0;
             console.log(twoDigit)
+
         }
     }
 
