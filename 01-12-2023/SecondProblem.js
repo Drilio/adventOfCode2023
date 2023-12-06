@@ -4,22 +4,12 @@ const rawDatas = fs.readFileSync("./test", 'utf-8');
 const datas = rawDatas.split('\n');
 
 function wordToNumber(word) {
-    const wordMap = {
-        one: 1,
-        two: 2,
-        three: 3,
-        four: 4,
-        five: 5,
-        six: 6,
-        seven: 7,
-        eight: 8,
-        nine: 9,
-    };
-
-    const match = word.match(/one|two|three|four|five|six|seven|eight|nine/g);
+    const match = word.match(/(?=(one|two|three|four|five|six|seven|eight|nine))/g);
 
     if (match) {
-        return word.replace(/one|two|three|four|five|six|seven|eight|nine/g, (matched) => {
+        return word.replace(/(?=(one|two|three|four|five|six|seven|eight|nine ))/g, (matched) => {
+            // Convert the matched word to its numeric equivalent
+            const wordMap = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9 };
             return wordMap[matched];
         });
     }
